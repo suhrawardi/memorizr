@@ -1,0 +1,10 @@
+
+<%= render :partial => 'units/unit', collection: @folder.units %>
+
+<div class="row">
+  <%= render :partial => 'attachments/attachment_form', object: @attachment %>
+</div>
+
+<div class="row">
+  <%= render :partial => 'notes/note_form', object: @note %>
+</div>

@@ -1,0 +1,22 @@
+<% if @unit.is_a?(Attachment) %>
+<div class="row picture">
+  <%= render partial: 'attachments/attachment', object: @unit %>
+</div>
+<% end %>
+
+<% if @unit.is_a?(Quote) %>
+<div class="row quote">
+  <%= render partial: 'quotes/quote', object: @unit %>
+</div>
+<% end %>
+
+<% if @unit.is_a?(Note) %>
+<div class="row note">
+  <%= render partial: 'notes/note', object: @unit %>
+</div>
+<% end %>
+
+<div class="row note">
+  <%= render partial: 'comments/comment', collection: @unit.comments %>
+  <%= render partial: 'comments/comment_form', object: @comment %>
+</div>

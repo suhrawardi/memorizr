@@ -1,0 +1,8 @@
+<div id="unit_<%= unit.id -%>" class="row">
+  <%= render partial: 'notes/note',
+             object: unit if unit.is_a?(Note) %>
+  <%= render partial: 'quotes/quote',
+             object: unit if unit.is_a?(Quote) %>
+  <%= render partial: 'attachments/attachment',
+             object: unit if unit.is_a?(Attachment) %>
+</div>

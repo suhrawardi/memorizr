@@ -1,0 +1,17 @@
+<div class="panel panel-default note"
+     id="note_<%= note.id -%>" data-unit_id="<%= note.id -%>">
+  <div class="panel-heading">
+    <div class="menu">
+      <div class="view">
+        &nbsp;
+        <%= more_link(note) %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= raw note.body %>
+  </div>
+  <div class="panel-footer">
+    <%= footer(note) %>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <title>Memorizr: <%= Settings.title %></title>
+
+  <%= stylesheet_link_tag :application %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+  <%= javascript_tag("
+  $(document).ajaxSend(function(e, xhr, options) {
+    var token = $(\"meta[name='csrf-token']\").attr(\"content\");
+    xhr.setRequestHeader(\"X-CSRF-Token\", token);
+  });
+  ") %>
+
+</head>
+<body>
+  <div class="container">
+
+  <div class="row">
+    <h2>« <%= Settings.title %> »</h2>
+  </div>
+
+  <div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "everyone's", home_index_path,
+                        title: 'Anything by posted by anyone' %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'mine',
+                          {controller: '/users', action: :units,
+                           id: current_user},
+                          title: 'Only your own posts' %></li>
+          <li><%= render partial: 'users/bookmark' %></li>
+          <li><%= link_to 'invite', new_user_invitation_path,
+                          title: 'Invite others to post here as well'  %></li>
+          <li><%= link_to 'help', about_index_path, title: 'How to ?' %></li>
+          <li><%= link_to 'logout', destroy_user_session_path %></li>
+        <% else %>
+          <li><%= link_to 'login', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="row"><%= raw show_flash %></div>
+
+  <%= yield %>
+
+</div>
+</body>
+</html>

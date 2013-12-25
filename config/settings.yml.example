@@ -1,0 +1,14 @@
+# config/settings.yml
+defaults: &defaults
+  hostname: example.com
+  secret_token: blah
+  title: blah
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -1,0 +1,17 @@
+<div class="row">
+  <%= paginate @units %>
+</div>
+
+<%= render partial: 'units/unit', collection: @units %>
+
+<div class="row">
+  <%= paginate @units %>
+</div>
+
+<div class="row">
+  <%= render partial: 'attachments/attachment_form', object: @attachment %>
+</div>
+
+<div class="row">
+  <%= render partial: 'notes/note_form', object: @note %>
+</div>

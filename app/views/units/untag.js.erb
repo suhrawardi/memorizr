@@ -1,0 +1,6 @@
+<% if @unit.errors.any? -%>
+  <% msg = @unit.errors.full_messages.join(',<br /> ') %>
+  <%= raw show_js_msg(:alert, msg) %>
+<% else -%>
+  new Unit(<%= @unit.id -%>).removeTagFromPage('<%= params[:name] -%>');
+<% end -%>

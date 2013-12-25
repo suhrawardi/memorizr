@@ -1,0 +1,36 @@
+<div class="panel panel-default quote"
+     id="quote_<%= quote.id -%>" data-unit_id="<%= quote.id -%>">
+  <div class="panel-heading">
+    <div class="menu">
+      <div class="view">
+        &nbsp;
+        <%= more_link(quote) %>
+        <% if quote.is_editable?(current_user) %>
+          <span class="message">&nbsp;</span>
+          <a class="right" data-action="edit">edit</a>
+        <% end %>
+      </div>
+      <% if quote.is_editable?(current_user) %>
+        <div class="edit" style="display: none;">
+          <button data-action="remove">remove</button>
+          <button data-action="highlight">highlight</button>
+          <button data-action="save">save</button>
+          <span class="error">&nbsp;</span>
+          <a class="right" data-action="close">close</a>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <div class="oembed"><%= show_oembed quote.url %></div>
+      <div class="body"><%= raw quote.body %></div>
+    </div>
+    <div class="panel-footer">
+      by <%= quote.user.name %>
+      <% if quote.url %>
+      from <%= link_to(truncate(quote.url, length: 90, omission: '…'),
+                       quote.url, title: quote.title) -%>
+      <% end %>
+      <%= time_ago_in_words(quote.created_at) %> ago
+    </div>
+  </div>
+</div>

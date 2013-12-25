@@ -1,0 +1,10 @@
+set :deploy_to, '/var/www/hostname/'
+
+# Your HTTP server, Apache/etc
+role :web, 'hostname'
+# This may be the same as your `Web` server
+role :app, 'hostname'
+# This is where Rails migrations will run
+role :db,  'hostname', primary: true
+
+set :monit_app_name, :hostname_passenger

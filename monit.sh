@@ -1,0 +1,30 @@
+#!/bin/bash
+
+source /etc/profile
+
+PROJECT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SHARED=$( readlink -m "${PROJECT_PATH}/../../shared" )
+BUNDLE_CMD="/usr/local/rvm/gems/ruby-1.9.3-p484@global/bin/bundle"
+PORT=$2
+export HOME="/root"
+
+start() {
+  cd $PROJECT_PATH
+  RAILS_ENV=production $BUNDLE_CMD exec passenger start -p $PORT --pid-file="${SHARED}/pids/passenger.pid" $PROJECT_PATH
+}
+
+stop() {
+  cd $PROJECT_PATH
+  $BUNDLE_CMD exec passenger stop --pid-file="${SHARED}/pids/passenger.pid"
+}
+
+case $1 in
+  start)
+    start &;;
+  stop)
+    stop &;;
+  *)
+    echo "You must provide one of: [start,stop]";
+    exit 1;;
+esac
+exit 0

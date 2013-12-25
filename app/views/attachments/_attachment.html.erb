@@ -1,0 +1,24 @@
+<div class="panel panel-default attachment"
+     id="attachment_<%= attachment.id -%>" data-unit_id="<%= attachment.id -%>">
+  <div class="panel-heading">
+    <div class="menu">
+      <div class="view">
+        &nbsp;
+        <%= more_link(attachment) %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <% if attachment.image? %>
+      <%= link_to(image_tag(attachment.attachment.thumb.url,
+                            class: 'img-thumbnail'),
+                  attachment.attachment.url) %>
+    <% else %>
+      <%= link_to(image_tag('file.png') << attachment.filename,
+                  attachment.attachment.url) %>
+    <% end %>
+  </div>
+  <div class="panel-footer">
+    <%= footer(attachment) %>
+  </div>
+</div>

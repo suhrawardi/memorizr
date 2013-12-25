@@ -1,0 +1,18 @@
+<% comment = comment_form %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Add a comment
+  </div>
+  <div class="panel-body">
+    <% if current_user %>
+    <div id="<%= dom_id(comment) -%>">
+      <%= form_tag comments_path do %>
+        <%= cktext_area_tag('comment[body]', '') %>
+        <%= hidden_field_tag('comment[unit_id]', comment.unit.id) %>
+      <% end %>
+    </div>
+    <% else %>
+      <p>Sign up or log in to post a comment!</p>
+    <% end %>
+  </div>
+</div>

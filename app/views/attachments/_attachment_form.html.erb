@@ -1,0 +1,14 @@
+<% attachment = attachment_form %>
+<div class="panel panel-default attachment">
+  <div class="panel-heading">
+    Add a file or an image
+  </div>
+  <div class="panel-body">
+    <%= form_tag attachments_path(attachment), multipart: true,
+                 method: :post do %>
+      <%= file_field :attachment, :attachment %>
+      <%= submit_tag 'upload' %>
+      <%= hidden_field_tag('attachment[folder_id]', attachment.folder.id) %>
+    <% end %>
+  </div>
+</div>

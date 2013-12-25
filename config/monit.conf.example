@@ -1,0 +1,3 @@
+check process hostname_passenger with pidfile /var/www/hostname/shared/pids/passenger.pid
+  start = "/var/www/hostname/current/monit.sh start 3000"
+  stop = "/var/www/hostname/current/monit.sh stop 3000"

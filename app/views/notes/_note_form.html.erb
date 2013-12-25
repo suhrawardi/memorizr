@@ -1,0 +1,12 @@
+<% note = note_form %>
+<div class="panel panel-default note">
+  <div class="panel-heading">
+    Add a note
+  </div>
+  <div class="panel-body">
+    <%= form_tag notes_path(note), :method => :post do %>
+      <%= cktext_area_tag('note[body]', '') %>
+      <%= hidden_field_tag('note[folder_id]', note.folder.id) %>
+    <% end %>
+  </div>
+</div>
