@@ -5,12 +5,12 @@
       <div class="view">
         &nbsp;
         <%= more_link(quote) %>
-        <% if quote.is_editable?(current_user) %>
+        <% if quote.editable?(current_user) %>
           <span class="message">&nbsp;</span>
           <a class="right" data-action="edit">edit</a>
         <% end %>
       </div>
-      <% if quote.is_editable?(current_user) %>
+      <% if quote.editable?(current_user) %>
         <div class="edit" style="display: none;">
           <button data-action="remove">remove</button>
           <button data-action="highlight">highlight</button>

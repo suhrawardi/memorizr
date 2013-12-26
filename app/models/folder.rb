@@ -6,7 +6,7 @@ class Folder < ActiveRecord::Base
   belongs_to :user
   has_many :units, -> {order 'updated_at DESC'}
 
-  def is_mine?(a_user)
+  def mine?(a_user)
     a_user == user
   end
 end

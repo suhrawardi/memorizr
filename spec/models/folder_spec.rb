@@ -42,7 +42,7 @@ describe Folder do
     end
   end
 
-  describe 'is_mine?' do
+  describe 'mine?' do
     before do
       @user = User.create!(:name => 'user', :email => 'user@nu.nl',
                            :password => 's3cR3t')
@@ -50,11 +50,11 @@ describe Folder do
     end
 
     it 'should be mine' do
-      @folder.is_mine?(@user).should be_true
+      @folder.mine?(@user).should be_true
     end
 
     it 'should not be some-one elses' do
-      @folder.is_mine?(double(User)).should_not be_true
+      @folder.mine?(double(User)).should_not be_true
     end
   end
 end

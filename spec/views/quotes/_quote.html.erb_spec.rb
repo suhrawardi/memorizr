@@ -8,7 +8,7 @@ describe 'quotes/_quote.html.erb' do
                         :page => @page, :user => @user,
                         :folder => mock_model(Folder),
                         :created_at => Time.now, :comments => [],
-                        :is_editable? => false, :is_sortable? => false)
+                        :editable? => false)
     view.stub(:current_user).and_return(mock_model(User))
     assign(:folder, mock_model(Folder))
   end 

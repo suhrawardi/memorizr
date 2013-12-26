@@ -6,14 +6,14 @@ describe "home/index.html.erb" do
     @quote = mock_model(Quote, body: '<p>Note</p>',
                         url: 'url', title: 'title', user: @user,
                         folder: mock_model(Folder),
-                        created_at: Time.now, comments: [], is_editable?: false)
+                        created_at: Time.now, comments: [], editable?: false)
     @note = mock_model(Note, body: '', comments: [], created_at: Time.now,
-                       body: '<p>Quote</p>', is_editable?: false, user: @user,
+                       body: '<p>Quote</p>', editable?: false, user: @user,
                        folder: mock_model(Folder))
     @image = double('image', thumb: double(url: '/path/to/thumb.png'),
                     url: '/path/to/img.png')
     @attachment = mock_model(Attachment, comments: [], created_at: Time.now,
-                             is_editable?: false, user: @user,
+                             editable?: false, user: @user,
                              attachment: @image, image?: true,
                              folder: mock_model(Folder))
     @array = [@quote, @note, @attachment] * 3

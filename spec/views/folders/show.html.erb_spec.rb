@@ -16,10 +16,10 @@ describe "folders/show.html.erb" do
                              folder: @folder, attachment: @image,
                              created_at: Time.now, user: @user, image?: true)
     @folder.stub(:units).and_return([@quote, @note, @attachment] * 3)
-    @note.stub(:is_editable?).and_return(true)
-    @quote.stub(:is_editable?).and_return(true)
-    @attachment.stub(:is_editable?).and_return(true)
-    @folder.stub(:is_mine?).and_return(true)
+    @note.stub(:editable?).and_return(true)
+    @quote.stub(:editable?).and_return(true)
+    @attachment.stub(:editable?).and_return(true)
+    @folder.stub(:mine?).and_return(true)
     assign(:attachment, @attachment)
     assign(:note, @note)
     assign(:folder, @folder)
@@ -68,7 +68,7 @@ describe "folders/show.html.erb" do
 
   describe 'for a folder that belongs to the current user' do
     before do
-      @folder.should_receive(:is_mine?).and_return(false)
+      @folder.should_receive(:mine?).and_return(false)
     end
   end
 end

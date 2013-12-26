@@ -10,11 +10,11 @@ class Unit < ActiveRecord::Base
 
   default_scope -> {order 'updated_at DESC'}
 
-  def is_editable?(a_user)
-    is_mine?(a_user)
+  def editable?(a_user)
+    mine?(a_user)
   end
 
-  def is_mine?(a_user)
+  def mine?(a_user)
     user == a_user
   end
 end

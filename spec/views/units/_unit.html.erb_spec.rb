@@ -14,8 +14,7 @@ describe 'units/_unit.html.erb' do
   describe 'for a note' do
     before do
       @note = mock_model(Note, :body => 'a Note', :user => @user,
-                         :folder => mock_model(Folder),
-                         :is_editable? => true,
+                         :folder => mock_model(Folder), :editable? => true,
                          :comments => [], :created_at => Time.now)
     end
 
@@ -34,7 +33,7 @@ describe 'units/_unit.html.erb' do
     before do
       @quote = mock_model(Quote, :body => 'a Quote', :user => @user,
                          :comments => [], :folder => mock_model(Folder),
-                         :is_editable? => true, :created_at => Time.now,
+                         :editable? => true, :created_at => Time.now,
                          :url => 'url', :title => 'title')
     end
 
@@ -55,7 +54,7 @@ describe 'units/_unit.html.erb' do
                       url: '/path/to/img.png')
       @attachment = mock_model(Attachment, attachment: @image, user: @user,
                                folder: mock_model(Folder), image?: true,
-                               is_editable?: true,
+                               editable?: true,
                                comments: [], created_at: Time.now)
     end
 

@@ -20,7 +20,7 @@ describe "units/show.html.erb" do
                           :url => 'url', :title => 'title',
                           :user => @user, :created_at => Time.now,
                           :folder => mock_model(Folder),
-                          :is_mine? => false, :is_editable? => false,
+                          :mine? => false, :editable? => false,
                           :comments => [@comment] * 4)
       assign(:unit, @quote)
       assign(:comment, mock_model(Comment, unit: @quote))
@@ -51,7 +51,7 @@ describe "units/show.html.erb" do
     before do
       @note = mock_model(Note, :body => '<p>Note</p>', :user => @user,
                          :created_at => Time.now, :folder => mock_model(Folder),
-                         :is_mine? => false, :is_editable? => false,
+                         :mine? => false, :editable? => false,
                          :comments => [@comment] * 4)
       assign(:unit, @note)
       assign(:comment, mock_model(Comment, unit: @note))
@@ -84,8 +84,8 @@ describe "units/show.html.erb" do
                       url: '/path/to/img.png')
       @attachment = mock_model(Attachment, attachment: @image, image?: true,
                                user: @user, created_at: Time.now,
-                               folder: mock_model(Folder), is_mine?: false,
-                               is_editable?: false, comments: [@comment] * 4)
+                               folder: mock_model(Folder), mine?: false,
+                               editable?: false, comments: [@comment] * 4)
       assign(:unit, @attachment)
       assign(:comment, mock_model(Comment, unit: @attachment))
     end

@@ -5,8 +5,8 @@ describe 'notes/_note.html.erb' do
     @user = mock_model(User, :name => 'James')
     @note = mock_model(Note, :body => '<p>Note body</p>',
                         :created_at => Time.now, :comments => [],
-                        :user => @user, :is_editable? => false,
-                        :is_sortable? => false, :folder => mock_model(Folder))
+                        :user => @user, :editable? => false,
+                        :folder => mock_model(Folder))
     view.stub(:current_user).and_return(mock_model(User))
     assign(:folder, mock_model(Folder))
   end 
