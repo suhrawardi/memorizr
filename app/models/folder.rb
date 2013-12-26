@@ -1,8 +1,5 @@
 class Folder < ActiveRecord::Base
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :description, :user
-
   validates :user, presence: true
   validates :name, presence: true
 

@@ -6,6 +6,5 @@ class FoldersController < ApplicationController
     @folder = Folder.find(params[:id])
     @note = Note.new(folder: @folder)
     @attachment = Attachment.new(folder: @folder)
-    @ckeditor = true
   end
 end

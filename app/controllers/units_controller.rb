@@ -5,6 +5,5 @@ class UnitsController < ApplicationController
   def show
     @unit = Unit.find(params[:id])
     @comment = Comment.new(unit: @unit)
-    @ckeditor = true
   end
 end

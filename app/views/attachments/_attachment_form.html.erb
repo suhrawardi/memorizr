@@ -8,7 +8,8 @@
                  method: :post do %>
       <%= file_field :attachment, :attachment %>
       <%= submit_tag 'upload' %>
-      <%= hidden_field_tag('attachment[folder_id]', attachment.folder.id) %>
+      <%= hidden_field_tag('attachment[folder_id]',
+                           attachment.folder.try(:id)) %>
     <% end %>
   </div>
 </div>

@@ -1,8 +1,5 @@
 class Quote < Unit
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :body, :page, :user
-
   before_validation :sanitize_body
   before_validation :absolutize_links
 

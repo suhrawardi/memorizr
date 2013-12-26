@@ -6,7 +6,7 @@
   <div class="panel-body">
     <%= form_tag notes_path(note), :method => :post do %>
       <%= cktext_area_tag('note[body]', '') %>
-      <%= hidden_field_tag('note[folder_id]', note.folder.id) %>
+      <%= hidden_field_tag('note[folder_id]', note.folder.try(:id)) %>
     <% end %>
   </div>
 </div>

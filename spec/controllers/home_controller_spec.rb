@@ -27,29 +27,18 @@ describe HomeController do
         get 'index'
         response.should be_success
       end
-
-      it 'should not trigger the Ckeditor JS' do
-        get 'index'
-        assigns(:ckeditor).should_not be_true
-      end
     end
 
     describe 'a user that is logged in' do
       before do
         @folder = mock_model(Folder)
         @user = double(User)
-        @user.stub(:default_folder).and_return(@folder)
         controller.stub(:current_user).and_return(@user)
       end
 
       it 'should be successful' do
         get 'index'
         response.should be_success
-      end
-
-      it 'should trigger the Ckeditor JS' do
-        get 'index'
-        assigns(:ckeditor).should be_true
       end
 
       it 'should provide an empty attachment' do

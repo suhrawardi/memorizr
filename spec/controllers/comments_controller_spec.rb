@@ -52,5 +52,4 @@ describe CommentsController do
       flash[:message].should_not be_nil
     end
   end
-
 end

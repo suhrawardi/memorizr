@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
   require 'uri/http'
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :url, :title
+#  attr_accessible :url, :title
 
   belongs_to :note
   belongs_to :user

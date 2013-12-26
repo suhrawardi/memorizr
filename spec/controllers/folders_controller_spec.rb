@@ -10,7 +10,7 @@ describe FoldersController do
     before do
       @user = double(User)
       controller.stub(:current_user).and_return(@user)
-      @folder = mock_model(Folder, :name => 'FolderName')
+      @folder = mock_model(Folder, name: 'FolderName')
       Folder.stub(:find).and_return(@folder)
       @note = mock_model(Note)
       Note.stub(:new).and_return(@note)
@@ -30,11 +30,6 @@ describe FoldersController do
     it 'should authenticate the user' do
       controller.should_receive(:authenticate_user!)
       get :show, id: 1
-    end
-
-    it 'should trigger the Ckeditor JS' do
-      get :show, id: 1
-      assigns(:ckeditor).should be_true
     end
 
     it 'should provide an empty note' do

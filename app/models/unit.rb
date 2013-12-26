@@ -1,8 +1,5 @@
 class Unit < ActiveRecord::Base
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :user, :folder
-
   mount_uploader :attachment, AttachmentUploader
 
   validates :user, presence: true
@@ -20,5 +17,4 @@ class Unit < ActiveRecord::Base
   def is_mine?(a_user)
     user == a_user
   end
-
 end

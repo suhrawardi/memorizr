@@ -42,7 +42,7 @@ gem 'rmagick'
 gem 'ruby-oembed', :git => 'git://github.com/judofyr/ruby-oembed.git'
 
 # Temporary thingies:
-gem 'protected_attributes'
+#gem 'protected_attributes'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
