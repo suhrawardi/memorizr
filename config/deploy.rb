@@ -8,7 +8,7 @@ require 'capistrano/ext/multistage'
 load 'config/deploy/custom.rb'
 
 set :application, 'memorizr'
-set :repository, 'gitolite@jarra.nl:quotr.git'
+set :repository, 'gitolite@jarra.nl:memorizr.git'
 
 load 'deploy/assets'
 
