@@ -15,13 +15,17 @@ class WebPage < ActiveRecord::Base
     URI.parse(url)
   end
 
+  def dirname
+    File.dirname(url)
+  end
+
+  def root
+    "#{scheme}://#{host}"
+  end
+
   %w(scheme host port path query).each do |name|
     define_method(name) do
       parsed_url.send(name.to_sym)
     end
-  end
-
-  def root(part=:root)
-    "#{scheme}://#{host}" 
   end
 end

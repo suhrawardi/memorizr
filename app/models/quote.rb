@@ -60,10 +60,8 @@ class Quote < Unit
 
   def to_abs_link(link)
     return link if link.match(/^(https?:|\/{2})/)
-    return self.web_page.root << link if link.match(/^\//)
-    unless URI.parse(link).path.blank?
-      return File.dirname(self.web_page.url) << '/' << link
-    end
-    self.web_page.root << '/' << link
+    return "#{self.web_page.root}#{link}" if link.match(/^\//)
+    return "#{self.web_page.dirname}/#{link}" unless URI.parse(link).path.blank?
+    "#{self.web_page.root}/#{link}"
   end
 end

@@ -45,7 +45,7 @@ describe WebPage do
 
   describe 'url' do
     before do 
-      @page = WebPage.new(url: 'https://www.google.nl/imghp?hl=nl&tab=wi')
+      @page = WebPage.new(url: 'https://www.nu.nl/een/twee/imghp?hl=nl&tab=wi')
     end
 
     it 'should return the scheme' do
@@ -53,11 +53,11 @@ describe WebPage do
     end
 
     it 'should return the host' do
-      expect(@page.host).to eq('www.google.nl')
+      expect(@page.host).to eq('www.nu.nl')
     end
 
     it 'should return the path' do
-      expect(@page.path).to eq('/imghp')
+      expect(@page.path).to eq('/een/twee/imghp')
     end
 
     it 'should return the query string' do
@@ -65,7 +65,11 @@ describe WebPage do
     end
 
     it 'should return the root' do
-      expect(@page.root).to eq('https://www.google.nl')
+      expect(@page.root).to eq('https://www.nu.nl')
+    end
+
+    it 'should return the dirname' do
+      expect(@page.dirname).to eq('https://www.nu.nl/een/twee')
     end
   end
 end
