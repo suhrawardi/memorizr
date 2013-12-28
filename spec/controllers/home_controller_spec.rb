@@ -5,17 +5,11 @@ describe HomeController do
   describe "GET 'index'" do
     before do
       @units = double('units selection')
+      Unit.stub(:page).and_return(@units)
       @note = mock_model(Note)
-      @attachment = mock_model(Attachment)
-      Unit.stub_chain(:order, :limit).and_return(@units)
       Note.stub(:new).and_return(@note)
+      @attachment = mock_model(Attachment)
       Attachment.stub(:new).and_return(@attachment)
-    end
-
-    it 'should provide units' do
-      Unit.should_receive(:page).and_return(@units)
-      get 'index'
-      assigns(:units).should == @units
     end
 
     describe 'a user that is not logged in' do
@@ -25,7 +19,25 @@ describe HomeController do
 
       it 'should be successful' do
         get 'index'
-        response.should be_success
+        expect(response).to be_success
+      end
+
+      it 'should provide units' do
+        Unit.should_receive(:page).and_return(@units)
+        get 'index'
+        expect(assigns(:units)).to eq(@units)
+      end
+
+      it 'does not provide an empty attachment' do
+        Attachment.should_not_receive(:new)
+        get 'index'
+        expect(assigns(:attachment)).to be_nil
+      end
+
+      it 'does not provide an empty note' do
+        Note.should_not_receive(:new)
+        get 'index'
+        expect(assigns(:note)).to be_nil
       end
     end
 
@@ -36,9 +48,15 @@ describe HomeController do
         controller.stub(:current_user).and_return(@user)
       end
 
+      it 'should provide units' do
+        Unit.should_receive(:page).and_return(@units)
+        get 'index'
+        expect(assigns(:units)).to eq(@units)
+      end
+
       it 'should be successful' do
         get 'index'
-        response.should be_success
+        expect(response).to be_success
       end
 
       it 'should provide an empty attachment' do

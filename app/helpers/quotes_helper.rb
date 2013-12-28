@@ -5,6 +5,6 @@ module QuotesHelper
     resource = OEmbed::Providers.get(url, max_size)
     raw resource.html
   rescue # OEmbed::NotFound (tmp we rescue any errors!)
-    '' # We only show OEmbeds
+    ''
   end
 end
