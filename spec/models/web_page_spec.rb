@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Page do
+describe WebPage do
   describe 'validation' do
     before do
-      @page = Page.new(url: 'http://nu.nl', title: 'Title')
+      @page = WebPage.new(url: 'http://nu.nl', title: 'Title')
     end
 
     it 'should be valid' do
@@ -31,7 +31,7 @@ describe Page do
 
   describe 'associations' do
     before do
-      @page = Page.new(url: 'http://nu.nl', title: 'Title')
+      @page = WebPage.new(url: 'http://nu.nl', title: 'Title')
     end
 
     it 'should have a note' do
@@ -45,7 +45,7 @@ describe Page do
 
   describe 'url' do
     before do 
-      @page = Page.new(url: 'https://www.google.nl/imghp?hl=nl&tab=wi')
+      @page = WebPage.new(url: 'https://www.google.nl/imghp?hl=nl&tab=wi')
     end
 
     it 'should return the scheme' do

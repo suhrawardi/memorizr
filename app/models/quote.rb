@@ -3,23 +3,23 @@ class Quote < Unit
   before_validation :sanitize_body
   before_validation :absolutize_links
 
-  has_one :page
+  has_one :web_page
 
   def self.create_with_page(params)
-    page = Page.create!(url: params[:url], title: params[:title])
+    page = WebPage.create!(url: params[:url], title: params[:title])
     body = StringHelper.to_utf8(params[:body])
-    self.create!(user: params[:user], body: body, page: page)
+    self.create!(user: params[:user], body: body, web_page: page)
   rescue
     page.destroy if page
     raise $!
   end
 
   def url
-    page.try(:url)
+    web_page.try(:url)
   end
 
   def title
-    return page.title if page
+    web_page.try(:title)
   end
 
   private
@@ -33,7 +33,7 @@ class Quote < Unit
   end
 
   def sanitize_body
-    return if self.page.nil? or self.body.blank?
+    return if self.web_page.nil? or self.body.blank?
     self.body.gsub!(/<!--(.|\s)*?-->/, '') # remove comments as well
     allowed = {tags: ALLOWED_TAGS, attributes: ALLOWED_ATTR}
     unless new_record? # allow highlight tags
@@ -45,7 +45,7 @@ class Quote < Unit
   end
 
   def absolutize_links
-    return if self.page.nil? or self.body.blank?
+    return if self.web_page.nil? or self.body.blank?
     doc = Nokogiri::HTML.parse(self.body)
     doc.xpath('//a').each do |node|
       link = node.attributes['href'].to_s
@@ -60,10 +60,10 @@ class Quote < Unit
 
   def to_abs_link(link)
     return link if link.match(/^(https?:|\/{2})/)
-    return self.page.root << link if link.match(/^\//)
+    return self.web_page.root << link if link.match(/^\//)
     unless URI.parse(link).path.blank?
-      return File.dirname(self.page.url) << '/' << link
+      return File.dirname(self.web_page.url) << '/' << link
     end
-    self.page.root << '/' << link
+    self.web_page.root << '/' << link
   end
 end

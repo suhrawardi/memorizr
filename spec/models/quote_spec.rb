@@ -27,8 +27,8 @@ describe Quote do
       @quote = Quote.new(body: '<p>body</p>')
     end
 
-    it 'should have a page' do
-      @quote.should respond_to :page
+    it 'should have a web_page' do
+      @quote.should respond_to :web_page
     end
 
     it 'should have a user' do
@@ -83,7 +83,7 @@ describe Quote do
     it 'should add a page' do
       lambda do
         Quote.create_with_page(@params)
-      end.should change(Page, :count).by(1)
+      end.should change(WebPage, :count).by(1)
     end
 
     describe 'sanitize html' do

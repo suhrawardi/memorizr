@@ -1,6 +1,6 @@
 require "#{Rails.root}/app/models/concerns/url_validator"
 
-class Page < ActiveRecord::Base
+class WebPage < ActiveRecord::Base
   require 'uri/http'
 
   # Setup accessible (or protected) attributes for your model
