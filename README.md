@@ -1,5 +1,7 @@
 # Memorizr
 
+[![Code Climate](https://codeclimate.com/github/suhrawardi/memorizr.png)](https://codeclimate.com/github/suhrawardi/memorizr)
+
 A simple and basic application you can use to archive and discuss quotes, notes and attachments.
 
 ## Install
