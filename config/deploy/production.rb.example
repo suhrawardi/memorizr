@@ -8,3 +8,5 @@ role :app, 'hostname'
 role :db,  'hostname', primary: true
 
 set :monit_app_name, :hostname_passenger
+
+load 'config/deploy/includes/monit.rb'

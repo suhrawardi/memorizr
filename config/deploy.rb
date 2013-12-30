@@ -21,5 +21,3 @@ set :rvm_ruby_string, 'ruby-1.9.3-p484'
 set :rvm_type, :system
 
 before 'deploy:finalize_update', 'deploy:symlink_config_files'
-
-load 'config/deploy_with_monit.rb'
