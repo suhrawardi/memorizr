@@ -39,7 +39,7 @@ gem 'carrierwave'
 gem 'rmagick'
 
 # Ruby-oembed
-gem 'ruby-oembed', :git => 'git://github.com/judofyr/ruby-oembed.git'
+gem 'ruby-oembed', git: 'git://github.com/judofyr/ruby-oembed.git'
 
 # Temporary thingies:
 #gem 'protected_attributes'
@@ -51,4 +51,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'simplecov'
+  gem 'brakeman', require: false
 end
