@@ -1,8 +1,8 @@
-== Memorizr
+# Memorizr
 
 A simple and basic application you can use to archive and discuss quotes, notes and attachments.
 
-== Install
+## Install
 
 The Capistrano tasks to start the server use Monit. There are countless other ways run Rails, and this might not be the best one. So be creative, add other ways, and send me a pull request... :-))
 
