@@ -13,8 +13,10 @@ gem 'mysql2'
 gem 'nokogiri'
 
 # Deploy with Capistrano
-gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'capistrano', '~> 3.0'
+gem 'capistrano-rvm'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
 
 gem 'passenger'
 
