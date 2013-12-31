@@ -2,5 +2,6 @@ language: ruby
 rvm:
   - 1.9.3
 before_script:
+  - cp config/settings.travis.yml config/settings.yml
   - cp config/database.travis.yml config/database.yml
   - mysql -e 'create database memorizr_test;'
