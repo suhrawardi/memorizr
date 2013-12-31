@@ -1,6 +1,10 @@
 # Memorizr
 
+[![Build Status](https://travis-ci.org/suhrawardi/memorizr.png?branch=master)](https://travis-ci.org/suhrawardi/memorizr)
+
 [![Code Climate](https://codeclimate.com/github/suhrawardi/memorizr.png)](https://codeclimate.com/github/suhrawardi/memorizr)
+
+[![Coverage Status](https://coveralls.io/repos/suhrawardi/memorizr/badge.png)](https://coveralls.io/r/suhrawardi/memorizr)
 
 A simple and basic application you can use to archive and discuss quotes, notes and attachments.
 

@@ -2,5 +2,4 @@ test:
   adapter: mysql2
   encoding: utf8
   database: memorizr_test
-  username: tester
-  password: tester
+  username: travis
