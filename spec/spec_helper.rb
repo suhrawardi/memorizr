@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 # Require simplecov for code coverage
 require 'simplecov'
 SimpleCov.start 'rails'

@@ -52,4 +52,5 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov'
   gem 'brakeman', require: false
+  gem 'coveralls', require: false
 end
