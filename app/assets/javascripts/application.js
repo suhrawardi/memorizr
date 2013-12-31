@@ -4,8 +4,8 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 
-//= require jquery-1.7.1.min
-//= require jquery-ui-1.8.18.min
+//= require jquery
+//= require jquery.ui.all
 
 //= require ckeditor/override
 //= require ckeditor/init
