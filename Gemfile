@@ -51,6 +51,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'simplecov'
-  gem 'brakeman', require: false
   gem 'coveralls', require: false
+  gem 'brakeman', require: false
 end
