@@ -59,7 +59,7 @@ And create an admin user (on the server). This user is the first one to log in, 
 
     1.9.3p484 :001 > User.create!(name: 'name', email: 'email', password: 'pw', password_confirmation: 'pw', admin: true)
 
-## Contributing to CarrierWave
+## Contributing to Memorizr
 
 See [CONTRIBUTING.md](https://github.com/suhrawardi/memorizr/blob/master/CONTRIBUTING.md)
 
