@@ -127,7 +127,7 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
-    passenger (4.0.31)
+    passenger (4.0.33)
       daemon_controller (>= 1.1.0)
       rack
       rake (>= 0.8.1)
