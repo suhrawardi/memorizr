@@ -15,7 +15,8 @@ gem 'nokogiri'
 
 # Deploy with Capistrano
 gem 'capistrano', '~> 3.0'
-gem 'capistrano-rvm'
+#gem 'capistrano-rvm'
+gem 'rvm1-capistrano3', require: false
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 
