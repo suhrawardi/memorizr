@@ -4,7 +4,7 @@ source /etc/profile
 
 PROJECT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SHARED=$( readlink -m "${PROJECT_PATH}/../../shared" )
-BUNDLE_CMD="/usr/local/rvm/gems/ruby-1.9.3-p484@global/bin/bundle"
+BUNDLE_CMD="/usr/local/rvm/gems/ruby-2.1.0@global/bin/bundle"
 PORT=$2
 export HOME="/root"
 
