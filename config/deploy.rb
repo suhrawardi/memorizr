@@ -16,7 +16,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache public/uploads}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
-set :rvm_ruby_string, 'ruby-1.9.3-p484'
+set :rvm_ruby_string, 'ruby-2.1.0'
 set :rvm_type, :system
 
 load 'config/deploy/custom.rb'
