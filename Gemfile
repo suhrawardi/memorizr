@@ -33,6 +33,7 @@ gem 'devise_invitable'
 # To use Jquery instead of Prototype:
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'sass-rails'
 gem 'rails-assets-bootstrap'
 
 gem 'uglifier'
