@@ -1,18 +1,16 @@
 require "#{Rails.root}/app/models/concerns/url_validator"
 
 class WebPage < ActiveRecord::Base
-  require 'uri/http'
-
-  # Setup accessible (or protected) attributes for your model
-#  attr_accessible :url, :title
 
   belongs_to :note
   belongs_to :user
 
+  delegate :scheme, :host, :port, :path, :query, to: :uri
+
   validates :url, url: true
 
-  def parsed_url
-    URI.parse(url)
+  def uri
+    @uri ||= UriHelper.new(url)
   end
 
   def dirname
@@ -21,11 +19,5 @@ class WebPage < ActiveRecord::Base
 
   def root
     "#{scheme}://#{host}"
-  end
-
-  %w(scheme host port path query).each do |name|
-    define_method(name) do
-      parsed_url.send(name.to_sym)
-    end
   end
 end
