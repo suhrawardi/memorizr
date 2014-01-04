@@ -16,13 +16,13 @@ namespace :deploy do
 
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      start_with_monit(monit_app_name)
+      start_with_monit($monit_app_name)
     end
   end
 
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      stop_with_monit(monit_app_name)
+      stop_with_monit($monit_app_name)
     end
   end
 
