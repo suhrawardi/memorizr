@@ -112,6 +112,12 @@ describe Quote do
         @quote.body.should =~ /http:\/\/nu.nl\/icon.png/
       end
 
+      it 'removes the noscript tags content' do
+        body = '<li><img src="LRG.jpg"><noscript>NOSCRIPT</noscript></li>'
+        @quote = Quote.create_with_page(@params.merge(body: body))
+        expect(@quote.body).not_to match(/NOSCRIPT/)
+      end
+
       describe 'absolute links' do
         it 'should add the base url to a link without a base url' do
           body = 'just <a href="/home">a link</a> and text'

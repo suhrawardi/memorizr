@@ -34,7 +34,10 @@ class Quote < Unit
 
   def sanitize_body
     return if self.web_page.nil? or self.body.blank?
-    self.body.gsub!(/<!--(.|\s)*?-->/, '') # remove comments as well
+    # remove comments as well
+    self.body.gsub!(/<!--(.|\s)*?-->/, '')
+    # remove content of noscript tags as well
+    self.body.gsub!(/<noscript>(.|\s)*?<\/noscript>/i, '')
     allowed = {tags: ALLOWED_TAGS, attributes: ALLOWED_ATTR}
     unless new_record? # allow highlight tags
       allowed[:tags] += %w(span)
