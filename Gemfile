@@ -42,7 +42,7 @@ gem 'uglifier'
 gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor.git'
 
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', require: false
 
 # Ruby-oembed
 gem 'ruby-oembed', git: 'git://github.com/judofyr/ruby-oembed.git'
