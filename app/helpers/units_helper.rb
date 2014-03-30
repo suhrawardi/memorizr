@@ -15,6 +15,7 @@ module UnitsHelper
   end
 
   def footer(unit)
-    "by #{unit.user.name} #{time_ago_in_words(unit.created_at)} ago"
+    link = link_to_user(unit.user)
+    raw "by #{link} #{time_ago_in_words(unit.created_at)} ago"
   end
 end

@@ -25,7 +25,7 @@
       <div class="body"><%= raw quote.body %></div>
     </div>
     <div class="panel-footer">
-      by <%= quote.user.name %>
+      by <%= link_to_user(quote.user) %>
       <% if quote.url %>
       from <%= link_to(truncate(quote.url, length: 90, omission: '…'),
                        quote.url, title: quote.title) -%>
