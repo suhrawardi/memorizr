@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'quotes/_quote.html.erb' do
-  before do 
+  before do
     @user = mock_model(User, :name => 'James')
     @quote = mock_model(Quote, :body => '<p>Quote body</p>',
                         :url => 'url', :title => 'title',
@@ -11,16 +11,16 @@ describe 'quotes/_quote.html.erb' do
                         :editable? => false)
     view.stub(:current_user).and_return(mock_model(User))
     assign(:folder, mock_model(Folder))
-  end 
+  end
 
   def do_render
     render :partial => 'quote', :object => @quote
   end
 
-  it 'should render' do 
+  it 'should render' do
     do_render
     rendered.should have_selector('p', :text => 'Quote body')
-  end 
+  end
 
   describe "the quote is by someone else's" do
 
