@@ -34,6 +34,8 @@
                            id: current_user},
                           title: 'Only your own posts' %></li>
           <li><%= render partial: 'users/bookmark' %></li>
+          <li><%= link_to 'add a note', {anchor: 'add_a_note_form'},
+                          title: 'Add another note or upload a file' %></li>
           <li><%= link_to 'invite', new_user_invitation_path,
                           title: 'Invite others to post here as well'  %></li>
           <li><%= link_to 'help', about_index_path, title: 'How to ?' %></li>
@@ -44,7 +46,7 @@
       </ul>
     </nav>
   </div>
-  
+
   <div class="row"><%= raw show_flash %></div>
 
   <%= yield %>
