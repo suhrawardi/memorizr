@@ -30,6 +30,9 @@ gem 'kaminari'
 gem 'devise'
 gem 'devise_invitable'
 
+# For Heroku
+gem 'rails_12factor', group: :production
+
 # To use Jquery instead of Prototype:
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
