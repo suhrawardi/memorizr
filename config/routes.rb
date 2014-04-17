@@ -1,4 +1,6 @@
 Memorizr::Application.routes.draw do
+  resources :users 
+ 
   resources :units
 
   resources :quotes
