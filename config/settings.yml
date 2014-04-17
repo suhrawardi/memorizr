@@ -1,0 +1,22 @@
+# config/settings.yml
+defaults: &defaults
+  hostname: '0.0.0.0:3000'
+  secret_token: 'a61f0b86160df5c799aee7c8ae0e39346d7a08c91a95818a0364147e2845a109af397734dbee7ee4837131982d4dd1a324d0ca79576a982ccb3959127ea75a17'
+  title: 'Memorizr'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  hostname: 'memorizr.nl'
+  smtp_settings:
+    :address: 'mail.jarra.nl'
+    :port: 25
+    :user_name: 'noreply@jarra.nl'
+    :password: 'RyVPdckY'
+    :authentication: :plain
+    :enable_starttls_auto: false
