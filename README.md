@@ -73,7 +73,7 @@ run Memorizr on Heroku:
 And then after you made changes:
 
     $ git checkout heroku
-    $ git rebase master
+    $ git merge master
     $ git push heroku heroku:master
 
 ## Contributing to Memorizr
