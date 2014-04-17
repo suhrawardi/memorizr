@@ -59,6 +59,23 @@ And create an admin user (on the server). This user is the first one to log in, 
 
     1.9.3p484 :001 > User.create!(name: 'name', email: 'email', password: 'pw', password_confirmation: 'pw', admin: true)
 
+## Installation on Heroku
+
+You need to have a config/settings.yml file commited in the Git repo to
+run Memorizr on Heroku:
+
+    $ git checkout -b heroku
+    $ git add -f config/settings.yml
+    $ git commit -m 'Added a config/settings.yml file for Heroku'
+    $ git push heroku heroku:master
+    $ git checkout master # to return to the master branch
+
+And then after you made changes:
+
+    $ git checkout heroku
+    $ git rebase master
+    $ git push heroku heroku:master
+
 ## Contributing to Memorizr
 
 See [CONTRIBUTING.md](https://github.com/suhrawardi/memorizr/blob/master/CONTRIBUTING.md)
