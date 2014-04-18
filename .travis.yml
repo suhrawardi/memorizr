@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.1.0
+script:
+  - bundle exec rake db:test:prepare
 before_script:
   - gem install bundler -v '= 1.5.1'
   - cp config/settings.travis.yml config/settings.yml
