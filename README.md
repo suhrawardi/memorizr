@@ -70,6 +70,9 @@ run Memorizr on Heroku:
     $ git push heroku heroku:master
     $ git checkout master # to return to the master branch
 
+Make sure to enable the ClearDB database on Heroku:
+https://devcenter.heroku.com/articles/cleardb
+
 And then after you made changes:
 
     $ git checkout heroku
