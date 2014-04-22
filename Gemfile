@@ -21,8 +21,6 @@ gem 'capistrano-bundler'
 
 gem 'passenger'
 
-gem 'therubyracer'
-
 gem 'settingslogic'
 
 gem 'kaminari'
