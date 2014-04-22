@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'https://rails-assets.org'
 
-gem 'rails', '~> 4.0'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,7 +22,8 @@ gem 'capistrano-bundler'
 gem 'passenger'
 
 gem 'therubyracer'
-
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 gem 'settingslogic'
 
 gem 'kaminari'
